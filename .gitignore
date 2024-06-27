@@ -1,0 +1,28 @@
+# dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# dependencies
+node_modules
+target
+bun.lockb
+yarn.lock
+
+# logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env.*
+!.env.example
+dev/localhost.pem
+dev/localhost-key.pem

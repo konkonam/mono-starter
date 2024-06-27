@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"lib": ["ESNext"],
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleDetection": "force",
+		"moduleResolution": "Bundler",
+		"strict": true,
+		"incremental": true,
+		"skipLibCheck": true,
+
+		"paths": {
+			"@mono/*": [
+				"./apps/**/src/*",
+				"./dev/**/src/*",
+				"./packages/**/src/*"
+			],
+		},
+		"types": [ "bun" ],
+	},
+
+	"include": [
+		"./apps/**/src/**/*.ts",
+		"./dev/**/src/**/*.ts",
+		"./packages/**/src/**/*.ts",
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+	],
+}

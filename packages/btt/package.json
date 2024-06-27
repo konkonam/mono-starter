@@ -1,0 +1,16 @@
+{
+    "name": "@mono/btt",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "main": "./src/index.ts",
+    "exports": {
+        ".": {
+            "bun": "./src/index.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "dependencies": {
+        "@mono/framework": "workspace:*"
+    }
+}
