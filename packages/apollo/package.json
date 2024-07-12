@@ -1,0 +1,19 @@
+{
+  "name": "@mono/apollo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "bun": "./src/index.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "@mono/dev": "workspace:*"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.10.8"
+  }
+}

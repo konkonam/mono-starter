@@ -1,0 +1,27 @@
+{
+  "name": "@mono/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "bun": "./src/index.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "nuxi dev"
+  },
+  "devDependencies": {
+    "@mono/dev": "workspace:*",
+    "@nuxt/eslint": "^0.3.13",
+    "@nuxt/image": "^1.7.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@pinia/nuxt": "^0.5.1",
+    "nuxt": "^3.11.2"
+  },
+  "dependencies": {
+    "pathe": "^1.1.2"
+  }
+}

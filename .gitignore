@@ -1,10 +1,13 @@
 # dev/build outputs
+dist
 .output
 .data
 .nuxt
 .nitro
 .cache
-dist
+
+dev/generated/**
+!dev/generated/.gitignore
 
 # dependencies
 node_modules
@@ -22,7 +25,17 @@ logs
 .idea
 
 # Local env files
+.env
 .env.*
+
+**/.env
+**/.env.*
+
 !.env.example
+!**/.env.example
+
+.direnv
+
+# certificates
 dev/localhost.pem
 dev/localhost-key.pem

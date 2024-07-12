@@ -3,25 +3,28 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
+    "dev",
     "apps/*",
-    "dev/*",
     "packages/*"
   ],
+  "trustedDependencies": [
+    "@mono/dev"
+  ],
   "scripts": {
-    "dev": "bun --env-file=./dev-ops/.env.development run dev/scripts/dev.ts",
-
-    "build": "bun --env-file=./dev-ops/.env run --filter=./packages/app build",
-    "build:prod": "bun run build",
-    "build:dev": "bun --env-file=./dev-ops/.env.development run --filter=./packages/app build",
-
-    "test": "bun run --parallel test --scope=packages/*",
-    "clean": "bun run dev/scripts/clean.ts"
+    "build:native": "bun --filter=./dev build:native",
+    "build": "bun --filter=./dev build",
+    "dev:native": "bun --filter=./dev dev:native",
+    "dev": "bun --filter=./dev dev",
+    "codegen": "bun --filter=./dev codegen",
+    "test": "bun --filter=./dev test",
+    "clean": "bun --filter=./dev clean"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.5"
+    "@mono/dev": "workspace:*",
+    "@types/bun": "^1.1.6"
   },
   "dependencies": {
-    "@mono/framework": "workspace:*",
-    "@mono/btt": "workspace:*"
+    "@mono/utils": "workspace:*",
+    "graphql": "^16.9.0"
   }
 }

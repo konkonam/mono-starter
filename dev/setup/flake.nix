@@ -13,10 +13,7 @@
 
         # Helper generating outputs for each desired system
         forAllSystems = nixpkgs.lib.genAttrs [
-            "x86_64-darwin"
-            "x86_64-linux"
             "aarch64-darwin"
-            "aarch64-linux"
         ];
 
         # Import nixpkgs' package set for each system.
@@ -33,8 +30,8 @@
 
             inherit (pkgs.stdenv) isLinux;
 
-            sslCertFile = "dev-ops/localhost.pem";
-            sslKeyFile = "dev-ops/localhost-key.pem";
+            sslCertFile = "dev/localhost.pem";
+            sslKeyFile = "dev/localhost-key.pem";
 
             rust-toolchain = pkgs.rust-bin.stable.latest.default.override {
                 extensions = ["rust-analyzer" "rust-src" "rust-std"];
@@ -52,10 +49,12 @@
 
             packages-darwin = with pkgs; [
                 rust-toolchain
+                nodejs
                 bun
                 curl
                 wget
                 pkg-config
+                dos2unix
                 libiconv
                 pkgs.mkcert
                 pkgs.nss.tools

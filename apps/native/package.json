@@ -1,5 +1,5 @@
 {
-    "name": "@mono/btt",
+    "name": "@mono/native",
     "version": "1.0.0",
     "private": true,
     "type": "module",
@@ -9,9 +9,5 @@
             "bun": "./src/index.ts",
             "import": "./dist/index.js"
         }
-    },
-    "dependencies": {
-        "@mono/apollo": "workspace:*",
-        "@vue/apollo-composable": "^4.0.2"
     }
 }
