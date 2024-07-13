@@ -3,8 +3,6 @@ import consola from 'consola';
 
 consola.wrapStd()
 
-console.log(Bun.env.PWD)
-
 Bun.spawn({
     cmd: [
         'bun',

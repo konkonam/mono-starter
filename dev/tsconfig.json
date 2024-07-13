@@ -1,3 +1,36 @@
 {
-	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"lib": [
+			"ESNext",
+			"dom"
+		],
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleDetection": "force",
+		"moduleResolution": "Bundler",
+		"strict": true,
+		"incremental": true,
+		"skipLibCheck": true,
+
+		"paths": {
+			"@mono/*": [
+				"./apps/*",
+				"./packages/*"
+			],
+			"@mono/dev/*": [
+				"./dev/*"
+			]
+		},
+		"types": [ "bun" ]
+	},
+
+	"include": [
+		"./apps/**/src/**/*.ts",
+		"./dev/**/src/**/*.ts",
+		"./packages/**/src/**/*.ts",
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+	],
 }

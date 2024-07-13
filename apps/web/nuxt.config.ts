@@ -1,5 +1,6 @@
-import project from '@mono/dev/configs/project'
-import { join } from 'pathe'
+import { join, dirname } from 'pathe'
+
+const projectRoot = dirname(Bun.env.npm_package_json ?? './package.json')
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -8,17 +9,25 @@ export default defineNuxtConfig({
     devtools: {
         enabled: false,
     },
+    typescript: {
+        tsConfig: {
+            compilerOptions: {
+                types: [ 'bun' ],
+            },
+        },
+    },
+    vite: {
+        cacheDir: '.nuxt/cache',
+    },
     devServer: {
         https: {
-            key: join(project.dev.rootDir, 'localhost-key.pem'),
-            cert: join(project.dev.rootDir, 'localhost.pem'),
+            key: join(projectRoot, 'dev/localhost-key.pem'),
+            cert: join(projectRoot, 'dev/localhost.pem'),
         },
     },
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxt/image',
-        '@pinia/nuxt',
-        '@nuxt/eslint',
         '@pinia/nuxt',
     ],
     components: {
@@ -30,16 +39,6 @@ export default defineNuxtConfig({
         ],
     },
     tailwindcss: {
-        configPath: join(project.dev.rootDir, 'tailwind.ts'),
-    },
-    eslint: {
-        config: {
-            stylistic: {
-                indent: 4,
-                semi: false,
-                quotes: 'single',
-                arrowParens: false,
-            },
-        },
+        configPath: join(projectRoot, 'tailwind.ts'),
     },
 })

@@ -4,9 +4,17 @@
   "private": true,
   "type": "module",
   "exports": {
-    ".": {
-      "bun": "./*",
-      "import": "./*"
+    "./configs/*": {
+      "bun": "./configs/*.ts",
+      "import": "./configs/*.js"
+    },
+    "./generated/*": {
+      "bun": "./generated/*.ts",
+      "import": "./generated/*.js"
+    },
+    "./scripts/*": {
+      "bun": "./scripts/*.ts",
+      "import": "./scripts/*.js"
     }
   },
   "scripts": {

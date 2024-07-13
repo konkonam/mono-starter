@@ -19,7 +19,8 @@
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@pinia/nuxt": "^0.5.1",
-    "nuxt": "^3.11.2"
+    "nuxt": "^3.11.2",
+    "@types/bun": "^1.1.6"
   },
   "dependencies": {
     "pathe": "^1.1.2"
