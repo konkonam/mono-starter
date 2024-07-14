@@ -17,4 +17,4 @@ jobs:
         run: nix flake check ./dev/setup/
 
       - name: lint code
-        run: nix develop ./dev/setup --command "bun --cwd=./ run lint"
+        run: bun run lint
