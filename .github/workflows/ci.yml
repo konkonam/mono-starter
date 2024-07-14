@@ -8,13 +8,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Nix
+      - name: setup nix
         uses: cachix/install-nix-action@v27
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
-      - name: flake check
+      - name: check flake
         run: nix flake check ./dev/setup/
+
+      - name: setup flake
+        run: nix develop ./dev/setup/
 
       - name: lint code
         run: bun run lint
