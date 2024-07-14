@@ -15,6 +15,7 @@
     body {
         @apply
             tracking-wide
+            leading-none
             rounded-md
             text-white
             flex-col

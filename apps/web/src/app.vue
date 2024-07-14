@@ -3,13 +3,9 @@ import '@fontsource-variable/sono'
 </script>
 
 <template>
-  <div>
-    <ElementsBox>
-        <ElementsButton>
+    <ElBox name="test">
+        <ElButton color="primary" size="small">
             test
-        </ElementsButton>
-    </ElementsBox>
-
-    <h1>hello</h1>
-  </div>
+        </ElButton>
+    </ElBox>
 </template>
