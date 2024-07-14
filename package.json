@@ -17,6 +17,7 @@
     "dev": "bun --filter=./dev dev",
     "codegen": "bun --filter=./dev codegen",
     "test": "bun --filter=./dev test",
+    "lint": "bun --filter=./dev lint",
     "clean": "bun --filter=./dev clean"
   },
   "devDependencies": {

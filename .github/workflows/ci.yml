@@ -17,7 +17,4 @@ jobs:
         run: nix flake check ./dev/setup/
 
       - name: Step 2
-        run: echo "Another step using Nix"
-
-      - name: Step 3
-        run: nix-shell -p hello --run "hello"
+        run: nix develop --command "bun run lint"

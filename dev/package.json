@@ -1,46 +1,46 @@
 {
-  "name": "@mono/dev",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "exports": {
-    "./configs/*": {
-      "bun": "./configs/*.ts",
-      "import": "./configs/*.js"
+    "name": "@mono/dev",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "exports": {
+        "./configs/*": {
+            "bun": "./configs/*.ts",
+            "import": "./configs/*.js"
+        },
+        "./generated/*": {
+            "bun": "./generated/*.ts",
+            "import": "./generated/*.js"
+        },
+        "./scripts/*": {
+            "bun": "./scripts/*.ts",
+            "import": "./scripts/*.js"
+        }
     },
-    "./generated/*": {
-      "bun": "./generated/*.ts",
-      "import": "./generated/*.js"
+    "scripts": {
+        "build:native": "bun --env-file=.env scripts/build.native.ts",
+        "build": "bun --env-file=.env scripts/build.ts",
+        "dev:native": "bun --env-file=.env.development scripts/dev.native.ts",
+        "dev": "bun --env-file=.env.development scripts/dev.ts",
+        "codegen": "bun scripts/codegen.ts",
+        "test": "bun scripts/test.ts",
+        "clean": "bun scripts/clean.ts",
+        "lint": "bun scripts/lint.ts",
+        "prebuild:native": "bun run codegen",
+        "prebuild": "bun run codegen",
+        "predev:native": "bun run codegen",
+        "predev": "bun run codegen"
     },
-    "./scripts/*": {
-      "bun": "./scripts/*.ts",
-      "import": "./scripts/*.js"
+    "dependencies": {
+        "consola": "^3.2.3",
+        "graphql": "^16.9.0",
+        "@biomejs/biome": "1.8.3",
+        "@graphql-codegen/cli": "^5.0.2",
+        "@graphql-codegen/typescript": "^4.0.7",
+        "@graphql-codegen/typescript-operations": "^4.2.1",
+        "@graphql-codegen/typescript-vue-apollo": "^4.1.1",
+        "@types/bun": "^1.1.6",
+        "pathe": "^1.1.2",
+        "tailwindcss": "^3.4"
     }
-  },
-  "scripts": {
-    "build:native": "bun --env-file=.env scripts/build.native.ts",
-    "build": "bun --env-file=.env scripts/build.ts",
-    "dev:native": "bun --env-file=.env.development scripts/dev.native.ts",
-    "dev": "bun --env-file=.env.development scripts/dev.ts",
-    "codegen": "bun scripts/codegen.ts",
-    "test": "bun scripts/test.ts",
-    "clean": "bun scripts/clean.ts",
-    "prebuild:native": "bun run codegen",
-    "prebuild": "bun run codegen",
-    "predev:native": "bun run codegen",
-    "predev": "bun run codegen"
-  },
-  "devDependencies": {
-    "@graphql-codegen/cli": "^5.0.2",
-    "@graphql-codegen/typescript": "^4.0.7",
-    "@graphql-codegen/typescript-operations": "^4.2.1",
-    "@graphql-codegen/typescript-vue-apollo": "^4.1.1",
-    "@types/bun": "^1.1.6",
-    "pathe": "^1.1.2",
-    "tailwindcss": "^3.4"
-  },
-  "dependencies": {
-    "consola": "^3.2.3",
-    "graphql": "^16.9.0"
-  }
 }

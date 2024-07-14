@@ -5,6 +5,7 @@ import { join } from 'pathe'
 
 const API_ENDPOINT = Bun.env.BTT_API_ENDPOINT ?? 'https://api.time.bestit.de/graphql'
 const FILE_PATH = join(project.temporaryDirs.generated, 'graphql.d.ts')
+const a: string = FILE_PATH
 
 export default {
     schema: API_ENDPOINT,
@@ -28,7 +29,3 @@ export default {
         },
     },
 } as const satisfies CodegenConfig
-
-
-
-
