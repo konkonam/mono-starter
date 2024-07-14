@@ -1,7 +1,4 @@
-import consola from 'consola'
 import project from '../configs/project'
-
-consola.wrapStd()
 
 Bun.spawn({
 	cmd: [

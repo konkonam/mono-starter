@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply
+            overflow-hidden
+            bg-transparent
+            scroll-smooth
+            min-h-screen
+            rounded-md
+        ;
+    }
+    body {
+        @apply
+            tracking-wide
+            rounded-md
+            text-white
+            flex-col
+            bg-dark
+            h-full
+            flex
+            /* For development, moile-first :) */
+            max-w-sm
+            mx-auto
+        ;
+
+        font-family: 'Sono Variable', sans-serif;
+    }
+
+    * {
+        @apply cursor-default;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    *::-webkit-scrollbar {
+        @apply hidden;
+    }
+}

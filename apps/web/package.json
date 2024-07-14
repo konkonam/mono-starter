@@ -11,18 +11,21 @@
     }
   },
   "scripts": {
-    "dev": "nuxi dev"
+    "build": "bunx --bun nuxt build",
+    "dev": "bunx --bun nuxt dev",
+    "generate": "bunx --bun nuxt generate",
+    "preview": "bunx --bun nuxt preview",
+    "postinstall": "bunx --bun nuxt prepare"
   },
   "devDependencies": {
-    "@mono/dev": "workspace:*",
-    "@nuxt/eslint": "^0.3.13",
-    "@nuxt/image": "^1.7.0",
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "@pinia/nuxt": "^0.5.1",
-    "nuxt": "^3.11.2",
-    "@types/bun": "^1.1.6"
+    "@types/bun": "^1.1.6",
+    "daisyui": "^4.12.10",
+    "pathe": "^1.1.2"
   },
   "dependencies": {
-    "pathe": "^1.1.2"
+    "@fontsource-variable/sono": "^5.0.20",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "nuxt": "^3.12.3",
+    "vue": "latest"
   }
 }
