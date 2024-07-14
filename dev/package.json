@@ -25,7 +25,6 @@
     "codegen": "bun scripts/codegen.ts",
     "test": "bun scripts/test.ts",
     "clean": "bun scripts/clean.ts",
-
     "prebuild:native": "bun run codegen",
     "prebuild": "bun run codegen",
     "predev:native": "bun run codegen",

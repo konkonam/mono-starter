@@ -9,14 +9,14 @@ Bun.spawn({
         '--bun',
         `--env-file=${project.envDirs.dev}`,
         'run',
-        `--filter=./../apps/web`,
+        '--filter=./../apps/web',
         'dev',
     ],
     stdout: 'inherit',
     onExit(subprocess, exitCode, signalCode, error) {
         if (error) {
             subprocess.kill()
-            consola.error(`could not start the web app!`, error)
+            consola.error("could not start the web app!", error)
         }
 
         subprocess.kill()
