@@ -13,7 +13,10 @@
 
         # Helper generating outputs for each desired system
         forAllSystems = nixpkgs.lib.genAttrs [
+            "x86_64-darwin"
+            "x86_64-linux"
             "aarch64-darwin"
+            "aarch64-linux"
         ];
 
         # Import nixpkgs' package set for each system.
@@ -39,6 +42,8 @@
             };
 
             packages-linux = with pkgs; [
+                nodejs
+                bun
                 rust-toolchain
                 pkg-config
                 gtk3
