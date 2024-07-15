@@ -7,7 +7,7 @@
   "exports": {
     ".": {
       "bun": "./src/index.ts",
-      "import": "./dist/index.js"
+      "import": "./src/index.ts"
     }
   },
   "devDependencies": {

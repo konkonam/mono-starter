@@ -18,14 +18,13 @@
     "postinstall": "bunx --bun nuxt prepare"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.6",
-    "daisyui": "^4.12.10",
-    "pathe": "^1.1.2"
+    "@types/bun": "^1.1.6"
   },
   "dependencies": {
     "@fontsource-variable/sono": "^5.0.20",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "nuxt": "^3.12.3",
-    "vue": "latest"
+    "@mono/apollo": "workspace:*",
+    "pathe": "^1.1.2",
+    "nuxt": "^3.12.3"
   }
 }

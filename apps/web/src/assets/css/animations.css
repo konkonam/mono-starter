@@ -1,0 +1,22 @@
+@keyframes button-pop {
+  0% {
+    transform: scale(var(0.95, 0.98));
+  }
+  40% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pop-up {
+    @media (prefers-reduced-motion: no-preference) {
+        animation: button-pop 0.25s ease-out;
+      }
+      &:active:hover,
+      &:active:focus {
+        animation: button-pop 0s ease-out;
+        transform: scale(0.97);
+      }
+}

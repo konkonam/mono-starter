@@ -3,9 +3,10 @@ import '@fontsource-variable/sono'
 </script>
 
 <template>
-    <ElBox name="test">
-        <ElButton color="primary" size="small">
-            test
-        </ElButton>
-    </ElBox>
+    <NuxtLoadingIndicator />
+    <NuxtLayout>
+        <NuxtPage />
+
+        <AppNotifications />
+    </NuxtLayout>
 </template>

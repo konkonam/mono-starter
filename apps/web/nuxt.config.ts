@@ -19,6 +19,24 @@ export default defineNuxtConfig({
 
 	vite: {
 		cacheDir: '.nuxt/cache',
+		server: {
+			hmr: {
+				protocol: 'ws',
+				host: 'localhost',
+			},
+		},
+	},
+
+	hooks: {
+		'vite:extendConfig': (viteInlineConfig, env) => {
+			viteInlineConfig.server = {
+				...viteInlineConfig.server,
+				hmr: {
+					protocol: 'ws',
+					host: 'localhost',
+				},
+			}
+		},
 	},
 
 	devServer: {
@@ -37,6 +55,10 @@ export default defineNuxtConfig({
 	components: {
 		dirs: [
 			{ path: '~/components/elements', pathPrefix: false, prefix: 'El' },
+			{ path: '~/components/icons', pathPrefix: false, prefix: 'Icon' },
+			{ path: '~/components/layout', pathPrefix: false, prefix: 'Layout' },
+			{ path: '~/components/navigation', pathPrefix: false, prefix: 'Nav' },
+			{ path: '~/components/navigation/items', pathPrefix: false, prefix: 'Item' },
 			{ path: '~/components', pathPrefix: false },
 		],
 	},

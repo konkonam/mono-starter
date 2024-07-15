@@ -1,3 +1,5 @@
+@import './animations.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,16 +8,17 @@
     html {
         @apply
             overflow-hidden
-            bg-transparent
             scroll-smooth
             min-h-screen
             rounded-md
+            bg-white
         ;
     }
     body {
         @apply
             tracking-wide
             leading-none
+            min-h-screen
             rounded-md
             text-white
             flex-col
