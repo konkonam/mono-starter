@@ -1,11 +1,8 @@
 <script setup lang="ts">
-const router = useRouter()
 </script>
 
 <template>
-	<div class="flex flex-row justify-between items-center">
-		<div v-for="route in router.getRoutes()">
-		    {{ route.name }}
-		</div>
+	<div class="flex flex-row items-center justify-between gap-x-4 w-full">
+    <NavMain />
 	</div>
 </template>

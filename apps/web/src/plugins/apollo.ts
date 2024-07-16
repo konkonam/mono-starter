@@ -3,10 +3,13 @@ import { createClient, createErrorLink } from '@mono/apollo'
 import { provideApolloClient } from '@vue/apollo-composable'
 
 export default defineNuxtPlugin((nuxt) => {
-	nuxt.s
+	const runtimeConfig = useRuntimeConfig()
+
 	const onGqlErrors = (errors: GraphQLErrors) => {
 		const isAuthError = errors.find((error) => {
-			return error.extensions?.category?.includes('authorization')
+			const categories = (error.extensions?.category ?? []) as string[]
+
+			return categories.includes('authorization')
 		})
 
 		if (isAuthError) {

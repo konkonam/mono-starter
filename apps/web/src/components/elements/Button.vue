@@ -10,6 +10,7 @@ enum Size {
 const props = defineProps<{
 	color?: ColorName
 	size?: keyof typeof Size
+	noPop?: boolean
 }>()
 
 const selectedColor = computed(() => `bg-${props.color ?? 'primary'}`)
@@ -18,11 +19,12 @@ const selectedSize = computed(() => Size[props.size ?? 'medium'])
 
 <template>
     <button :class='[
+        props.noPop ? "" : "pop-up",
         selectedColor,
         selectedSize,
-        "rounded-sm",
-        "pop-up",
+        "rounded-md",
     ]'>
+
         <slot />
     </button>
 </template>

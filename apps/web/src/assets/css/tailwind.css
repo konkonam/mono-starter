@@ -34,7 +34,7 @@
     }
 
     * {
-        @apply cursor-default;
+        @apply cursor-default transition-colors;
 
         scrollbar-width: none;
         -ms-overflow-style: none;
