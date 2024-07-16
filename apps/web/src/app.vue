@@ -4,9 +4,9 @@ import '@fontsource-variable/sono'
 
 <template>
     <NuxtLoadingIndicator />
+
+
     <NuxtLayout>
         <NuxtPage />
-
-        <AppNotifications />
     </NuxtLayout>
 </template>

@@ -46,6 +46,12 @@ export default defineNuxtConfig({
 		},
 	},
 
+	runtimeConfig: {
+		public: {
+			apiEndpoint: 'https://api.example.com',
+		},
+	},
+
 	modules: ['@nuxtjs/tailwindcss'],
 
 	tailwindcss: {
