@@ -25,7 +25,7 @@ export const isEmptyStr = (value: unknown) => value === ''
  * @param value
  */
 export const isValid = (value: unknown) => {
-    return (!isUndefined(value) && !isNull(value) && !isEmptyStr(value))
+	return !isUndefined(value) && !isNull(value) && !isEmptyStr(value)
 }
 
 /**
@@ -33,14 +33,14 @@ export const isValid = (value: unknown) => {
  *
  * @param value
  */
-export const isNumber = (value: unknown): value is Number => typeof value === 'number'
+export const isNumber = (value: unknown): value is number => typeof value === 'number'
 
 /**
  * Checks if a value is a string
  *
  * @param value
  */
-export const isString = (value: unknown): value is String => typeof value === 'string'
+export const isString = (value: unknown): value is string => typeof value === 'string'
 
 /**
  * Checks if a value is a boolean
@@ -54,7 +54,7 @@ export const isBoolean = (value: unknown): value is boolean => typeof value === 
  *
  * @param value
  */
-export const isObject = (value: unknown): value is Object => typeof value === 'object'
+export const isObject = (value: unknown): value is object => typeof value === 'object'
 
 /**
  * Checks if a value is an array
@@ -68,4 +68,4 @@ export const isArray = (value: unknown) => Array.isArray(value)
  *
  * @param value
  */
-export const isFunction = (value: unknown): value is Function => typeof value === 'function'
+export const isFunction = (value: unknown) => typeof value === 'function'

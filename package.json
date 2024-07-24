@@ -1,34 +1,24 @@
 {
-  "name": "@mono/toolbox",
-  "version": "1.0.0",
-  "private": true,
-  "workspaces": [
-    "dev",
-    "apps/*",
-    "packages/*"
-  ],
-  "trustedDependencies": [
-    "@mono/dev"
-  ],
-  "scripts": {
-    "build:native": "bun --filter=./dev build:native",
-    "build": "bun --filter=./dev build",
-    "dev:native": "bun --filter=./dev dev:native",
-    "dev": "bun --filter=./dev dev",
-    "codegen": "bun --filter=./dev codegen",
-    "test": "bun --filter=./dev test",
-    "lint": "bun --filter=./dev lint",
-    "clean": "bun --filter=./dev clean"
-  },
-  "devDependencies": {
-    "@mono/dev": "workspace:*",
-    "@types/bun": "^1.1.6",
-    "@biomejs/biome": "1.8.3"
-  },
-  "dependencies": {
-    "@mono/native": "workspace:*",
-    "@mono/web": "workspace:*",
-    "@mono/utils": "workspace:*",
-    "graphql": "^16.9.0"
-  }
+    "name": "@mono/toolbox",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": ["app", "dev", "packages/*"],
+    "trustedDependencies": ["@mono/dev"],
+    "scripts": {
+        "build": "bun --filter=./app build",
+        "dev": "bun --filter=./app dev",
+        "test": "bun --filter=./app test",
+        "lint": "bun --filter=./app lint",
+        "clean": "bun --filter=./dev clean"
+    },
+    "devDependencies": {
+        "@mono/dev": "workspace:*",
+        "@types/bun": "^1.1.6",
+        "@biomejs/biome": "1.8.3"
+    },
+    "dependencies": {
+        "@mono/web": "workspace:*",
+        "@mono/utils": "workspace:*",
+        "@mono/apollo": "workspace:*"
+    }
 }
